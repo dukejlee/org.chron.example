@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FAS Test</title>
+  <!-- DY Graph -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>   -->
+  <script src="./assets/dygraph/dygraph.min.js"></script>
+  <script src="./assets/axios/axios.js"></script>
+  <!-- <script src="./assets/src-es5/dygraph.js"></script> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" /> -->
+  <link rel="stylesheet" href="./assets/dygraph/dygraph.min.css">
+  <!-- Material Icons -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+  <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
+  <!-- Bootstrap UI -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+  <!-- Style -->
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="main-container">
+    <header class="main-header">
+      <h1>
+        <span class="logo-img"><img src="./assets/img/ic-logo_tp.png" alt="logo"></span>
+        FDC AUTO SETTLING
+      </h1>
+
+
+      <div class="header-right">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+
+        <div class="pagination-btn">
+          <button type="button" class="btn btn-outline-secondary previous-button"><</button>
+          <button type="button" class="btn btn-outline-secondary next-button">></button>
+        </div>
+      </div>
+      
+
+    </header>
+    <div class="main-center">
+
+      <!-- Left Area -->
+      <div class="left-pannel">
+        <h2>Search Condition</h2>
+        <span>Chart searching for FAS</span>
+
+        <div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="fab" class="search-label">FAB</label>
+          <select class="form-control" id="fab">
+            <option>M10</option>
+            <option>M11</option>
+            <option>M12</option>
+            <option>M14</option>
+          </select>
+          
+          <label for="eq" class="search-label">EQP</label>
+          <select class="form-control" id="eq">
+            <option>4EAE0201</option>
+            <option>4EAE0202</option>
+          </select>
+
+          <label for="module" class="search-label">Module</label>
+          <select class="form-control" id="module">
+            <option>4EAE0201_A</option>
+            <option>4EAE0202_C</option>
+          </select>
+
+          <label for="recipe" class="search-label">Recipe</label>
+          <select class="form-control" id="recipe">
+            <option>X_PL_KGT_SEA_C</option>
+            <option>CC_POM_R05_M10_A</option>
+          </select>
+        </div>
+
+        <!-- <button type="button" class="btn btn-outline-primary">Search</button> -->
+
+        <div class="parameter-list">
+          <h3>Parameter</h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+
+              <div style="display: flex; align-items: center;" class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="1" required>
+                <label class="custom-control-label" for="1">CHILLER_BRINE_FLOW_RATE_CATHODE</label>
+              </div>
+
+              <!-- CHILLER_BRINE_FLOW_RATE_CATHODE -->
+            </li>
+            <li class="list-group-item">
+              <div style="display: flex; align-items: center;" class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="2" required>
+                <label class="custom-control-label" for="2">CH_SLIT_VALVE_OPEN</label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div style="display: flex; align-items: center;" class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="3" required>
+                <label class="custom-control-label" for="3">CURRENT_RF_ON_TIME</label>
+              </div>
+            <li class="list-group-item">
+              <div style="display: flex; align-items: center;" class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="4" required>
+                <label class="custom-control-label" for="4">DATA_QUALITY_1</label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div style="display: flex; align-items: center;" class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="5" required>
+                <label class="custom-control-label" for="5">ESC_VOLTAGE</label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div style="display: flex; align-items: center;" class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="6" required>
+                <label class="custom-control-label" for="6">ESC_VOLTAGE_SET</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <button type="button" class="btn btn-outline-primary">Chart</button> -->
+        <div class="search-btn">
+          <div>
+            <!-- <input type="text" class="max-count" value="1000"> -->
+            <input class="form-control max-count" type="text" value="1000">
+          </div>
+          <button type="button" class="btn btn-info js-sel-render-button">Search</button>
+        </div>
+        
+        
+      </div>
+  
+      <!-- Center Area -->
+      <div class="center-pannel">
+        <main>
+          <div class="d-none flex-column h-100 charts-column-layout">
+            <div style="height: 0;" class="flex-grow-1 mb-5">
+              <div class="w-100 h-100 js-sel-chart-0 js-sel-chart"></div>
+            </div>
+            <div style="height: 0;" class="flex-grow-1 mb-5">
+              <div class="w-100 h-100 js-sel-chart-1 js-sel-chart"></div>
+            </div>
+            <div style="height: 0;" class="flex-grow-1">
+              <div class="w-100 h-100 js-sel-chart-2 js-sel-chart"></div>
+            </div>
+          </div>
+          <div class="d-flex flex-column h-100 charts-grid-layout">
+            <div style="height: 0;" class="flex-grow-1 d-flex mb-5">
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-0 js-sel-chart"></div>
+              </div>
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-1 js-sel-chart"></div>
+              </div>
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-2 js-sel-chart"></div>
+              </div>
+            </div>
+            <div style="height: 0;" class="flex-grow-1 d-flex mb-5">
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-3 js-sel-chart"></div>
+              </div>
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-4 js-sel-chart"></div>
+              </div>
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-5 js-sel-chart"></div>
+              </div>
+            </div>
+            <div style="height: 0;" class="flex-grow-1 d-flex">
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-6 js-sel-chart"></div>
+              </div>
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-7 js-sel-chart"></div>
+              </div>
+              <div style="width: 0;" class="flex-grow-1">
+                <div class="w-100 h-100 js-sel-chart-8 js-sel-chart"></div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <nav class="pagination"></nav>
+      </div>
+
+      <!-- 삭제예정 -->
+      <div class="right-pannel">
+        <h2>Attribute</h2>
+        <label class="select-label">
+          <span>charts:</span>
+          <select class="chart-num-select"></select>
+        </label>
+        <label class="select-label">
+          <span>points:</span>
+          <select class="point-num-select"></select>
+        </label>
+        <h2>Performance</h2>
+        <div>
+          <span>Server:</span>
+          <span class="performance-server"></span>
+        </div>
+        <div>
+          <span>Render:</span>
+          <span class="performance-render"></span>
+        </div>
+      </div>
+    </div>
+    <!-- <footer class="main-footer">
+      <span>Brique</span>
+    </footer> -->
+  </div>
+</body>
+<script src="index.js"></script>
+<!-- Jquery JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="./assets/jquery/jquery.3.3.1.js"></script>
+<!-- Popper JS -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> --> -->
+<script src="./assets/popper/popper.1.14.0.min.js"></script>
+<!-- Bootstrap JS -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
+<script src="./assets/bootstrap/bootstrap.min.js"></script>
+</html>

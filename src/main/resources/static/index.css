@@ -1,0 +1,376 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* FONT STYLE */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+  border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.hide {
+  display: none;
+}
+
+/* Dygraph config */
+
+.dygraph-legend {
+  left: 70px !important;
+  background-color: transparent !important;
+}
+
+/* Custom */
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background-color: #f8f8f824;
+}
+
+/* Checkbox */
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #e05158bb;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-header {
+  display: flex !important;
+  justify-content: space-between;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  box-sizing: border-box;
+  padding-left: 2rem;
+}
+
+.main-header>h1 {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #3c3c4f;
+  font-size: 18px;
+  background: -webkit-linear-gradient(#185f75f1, #5e1338);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-header>h1>.logo-img {
+  margin-right: 5px;
+}
+
+.main-header .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.main-header .switch {
+  margin-right: 20px;
+}
+
+.main-header .pagination-btn {
+  margin-right: 30px;
+}
+
+.main-header .pagination-btn .btn-outline-secondary {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 15px;
+  border-color: #6a6ac5d5;
+  color: rgba(255, 255, 255, 0.671);
+  background-color: #6a6ac5d5;
+}
+
+.main-header .pagination-btn .btn-outline-secondary:active {
+  border-color: #6a6ac5a4;
+  color: rgba(255, 255, 255, 0.671);
+  background-color: #6a6ac5a4;
+}
+
+/* Switch style */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 25px;
+}
+
+.slider:before {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #e05158bb;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #e05158bb;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* switch end */
+
+
+.main-center {
+  display: flex;
+  height: 0;
+  flex-grow: 1;
+}
+
+/* [EUNJU]: 영역 숨겨둠 */
+.main-footer {
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  box-sizing: border-box;
+}
+
+.main-center .left-pannel {
+  border-right: 1px solid rgba(204, 204, 204, 0.397);
+  background-color: white;
+  box-sizing: border-box;
+  min-width: 300px;
+  padding: 15px;
+}
+
+.main-center .left-pannel>h2 {
+  margin-top: 10px;
+  margin-bottom: 3px;
+  font-size: 17px;
+}
+
+.main-center .left-pannel>span {
+  display: block;
+  margin-bottom: 20px;
+  color: #b1aab6;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 100;
+
+}
+
+/* .main-center .left-pannel .btn-outline-primary {
+  float: right;
+  margin-bottom: 15px;
+  border-color: #9eb1fe;
+  color: #9eb1fe;
+  font-size: 14px;
+  width: 70px;
+}
+
+.main-center .left-pannel .btn-outline-primary:hover {
+  background: #9eb1fe;
+  color: #e4e9ff;
+} */
+
+.main-center .left-pannel .search-btn {
+  display: flex;
+  margin-top: 10px;
+} 
+
+.main-center .left-pannel .search-btn .form-control {
+  font-size: 14px;
+}
+
+.main-center .left-pannel .btn-info {
+  float: right;
+  background-color: #e05158bb;
+  border-color: #cf474ebb;
+  font-size: 14px;
+  width: 70px;
+  margin-left: 10px;
+}
+
+.main-center .left-pannel .btn-info:active {
+  background-color: #d4474ebb;
+  border-color: #d4474ebb;
+}
+
+.main-center .left-pannel .form-group .search-label {
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #5c5cb1;
+}
+
+.main-center .left-pannel .form-group .form-control {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Parameter List */
+.main-center .left-pannel .parameter-list {
+  clear: both;
+  margin-top: 30px;
+}
+
+.main-center .left-pannel .parameter-list>h3 {
+  margin-bottom: 10px;
+}
+
+.main-center .left-pannel .parameter-list .list-group-item {
+  height: 47px;
+  font-size: 13px;
+  padding: 10px 0;
+  color: rgba(101, 89, 105, 0.699);
+}
+
+/* [EUNJU]: 추후 반응형orSplit 으로 변경시 css적용됨 */
+.main-center .left-pannel .parameter-list .list-group-item>span {
+  display: inline-block;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* [EUNJU]: 추후 추가될 Right영역 */
+.main-center .right-pannel {
+  width: 300px;
+  background-color: white;
+  display: none;
+}
+
+.main-center .right-pannel .select-label {
+  display: inline-block;
+}
+
+.main-center .center-pannel {
+  display: flex;
+  width: 100%;
+}
+
+/* In Center */
+main {
+  width: 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin: 30px;
+}
+
+main .previous-loading, .next-loading {
+  height: 3rem;
+  min-height: 3rem;
+  border: 2px solid red;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .previous-loading:hover, .next-loading:hover {
+  background-color: #ffebee;
+  cursor: pointer;
+}
+
+main .charts-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .charts-error {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
