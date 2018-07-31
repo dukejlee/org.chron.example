@@ -28,15 +28,15 @@ import org.chron.example.util.JSONUtil;
 public class JARApplication {
 
 	public void doing() throws Exception {
-		int iA = Integer.parseInt(System.getProperty("INPUT_A", "0"));
-		int iB = Integer.parseInt(System.getProperty("INPUT_B", "0"));
-		int iResult = iA * iB;
+		double dA = Double.parseDouble(System.getProperty("INPUT_A", "0,0"));
+		double dB = Double.parseDouble(System.getProperty("INPUT_B", "0,0"));
+		double dResult = dA * dB;
 
-		System.out.println(String.format("Result %s X %s = %s", iA, iB, iResult));
+		System.out.println(String.format("Result %s X %s = %s", dA, dB, dResult));
 
 		Map<String, Object> map = new HashMap<>();
 		map.put("RESULT_MSG"     , "OK");
-		map.put("RESULT_MULTIPLY", iResult);
+		map.put("RESULT_MULTIPLY", dResult);
 
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("OUTPUT", map);
